@@ -11,6 +11,7 @@ Route::get('/', [DashboardController::class, 'index'])->name(
 
 Route::get('/login', [LoginController::class, 'index'])->name('login-page');
 Route::get('/register', [RegisterController::class, 'index'])->name('register-page');
+Route::
 
 // Route::prefix('admin')->group(function () {
 //     Route::get('/', [DashboardController::class, 'index'])->name(

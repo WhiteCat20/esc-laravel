@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('no_telp')->unique();
             $table->string('password');
             $table->enum('role', ['Dev', 'Admin', 'Guest'])->default('Guest');
+            $table->enum('status', ['verified', 'unverified'])->default('unverified');
         });
     }
 
