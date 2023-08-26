@@ -4,14 +4,14 @@
         <div class="login-logo">
             <a href="#"><b>ECS Study Club</b></a>
         </div>
-        <!-- /.login-logo -->
         <div>
             <div>
                 <p class="login-box-msg">Register Here</p>
-                <form action="#" method="post">
+                <form action="/register" method="POST" enctype="multipart/form-data">
+                    @csrf
                     <div class="mb-3">
                         <label for="nama" class="form-label">Nama Lengkap</label>
-                        <input type="email" class="form-control" id="nama" name="nama">
+                        <input type="text" class="form-control" id="nama" name="nama">
                     </div>
                     <div class="mb-3">
                         <label for="email" class="form-label">Email </label>
@@ -25,13 +25,13 @@
                         <div class="col-6">
                             <div class="mb-3">
                                 <label for="nama" class="form-label">NRP</label>
-                                <input type="email" class="form-control" id="nama" name="nrp">
+                                <input type="text" class="form-control" id="nama" name="nrp">
                             </div>
                         </div>
                         <div class="col-6">
                             <div class="mb-3">
                                 <label for="nama" class="form-label">No Telp</label>
-                                <input type="email" class="form-control" id="nama" name="no_telp">
+                                <input type="text" class="form-control" id="nama" name="no_telp">
                             </div>
                         </div>
                     </div>
@@ -45,11 +45,12 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputFile">Bukti Pembayaran</label>
+                        <label for="bukti_pembayaran">Bukti Pembayaran</label>
                         <div class="input-group">
                             <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="exampleInputFile">
-                                <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                                <input type="file" class="custom-file-input" id="bukti_pembayaran"
+                                    name="bukti_pembayaran">
+                                <label class="custom-file-label" for="bukti_pembayaran">Choose file</label>
                             </div>
                             <div class="input-group-append">
                                 <span class="input-group-text">Upload</span>
@@ -60,11 +61,9 @@
                         <div class="col-12">
                             <button type="submit" class="btn btn-primary btn-block">Sign In</button>
                         </div>
-                        <!-- /.col -->
                     </div>
                 </form>
             </div>
-            <!-- /.login-card-body -->
         </div>
     </div>
 @endsection

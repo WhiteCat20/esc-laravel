@@ -28,7 +28,7 @@
                             class="fas fa-bars"></i></a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="#" class="nav-link">Logged in as : Super Admin</a>
+                    <a href="#" class="nav-link">Logged in as : <b style="color: black">{{ auth()->user()->nama }}</b></a>
                 </li>
             </ul>
 
@@ -38,6 +38,14 @@
                     <a class="nav-link" data-widget="fullscreen" href="#" role="button">
                         <i class="fas fa-expand-arrows-alt"></i>
                     </a>
+                </li>
+                <li class="nav-item">
+                    <form action="{{ route('logout') }}" method="POST">
+                        @csrf
+                        <button type="submit" class="d-block btn btn-danger">
+                            <span>Logout</span>
+                        </button>
+                    </form>
                 </li>
             </ul>
         </nav>
