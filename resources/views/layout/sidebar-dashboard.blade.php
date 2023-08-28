@@ -2,7 +2,7 @@
     <!-- Brand Logo -->
     <div class="d-flex justify-content-center my-3">
         <a href="#" class="brand-link">
-            <h3 class="brand-text text-center font-weight-bold">ECS Study Club</h3>
+            <h3 class="brand-text text-center font-weight-bold">EPTA Dashboard</h3>
         </a>
     </div>
     <!-- Sidebar -->

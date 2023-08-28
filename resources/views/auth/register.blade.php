@@ -2,20 +2,22 @@
 @section('content')
     <div class="card" style='padding:100px'>
         <div class="login-logo">
-            <a href="#"><b>ECS Study Club</b></a>
+            <a href="#"><b>Welcome to EPTA Registration</b></a>
         </div>
         <div>
             <div>
-                <p class="login-box-msg">Register Here</p>
+                <p class="login-box-msg">Please fill columns below</p>
                 <form action="/register" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="mb-3">
                         <label for="nama" class="form-label">Nama Lengkap</label>
-                        <input type="text" class="form-control" id="nama" name="nama">
+                        <input type="text" class="form-control" id="nama" name="nama"
+                            placeholder="Example : John Doe">
                     </div>
                     <div class="mb-3">
                         <label for="email" class="form-label">Email </label>
-                        <input type="email" class="form-control" id="email" name="email">
+                        <input type="email" class="form-control" id="email" name="email"
+                            placeholder="Example : johndoe@gmail.com">
                     </div>
                     <div class="mb-3">
                         <label for="password" class="form-label">Password</label>

@@ -5,12 +5,12 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
 
-Route::middleware(['auth'])->group(function () {
+Route::middleware(['auth', 'userstatus'])->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name(
         'dashboard.index'
     );
 });
-
+Route::get('/unverified', [DashboardController::class, 'unverified'])->name('unverified');
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'authenticate'])->name('authenticate');
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');

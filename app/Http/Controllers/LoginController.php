@@ -19,12 +19,10 @@ class LoginController extends Controller
             'email' => ['required'],
             'password' => ['required'],
         ]);
-
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
             return redirect()->intended('/');
         }
-
         return redirect('/login')->with('LoginError', 'Login Failed!');
     }
 
