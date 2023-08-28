@@ -27,11 +27,11 @@
                         </div>
                     </div>
                     <div class="col-12 ">
-                        <button type="submit" class="btn btn-danger btn-block">Sign In</button>
+                        <button type="submit" class="btn btn-danger btn-block">Sign in</button>
                     </div>
                 </form>
                 <p class="text-center mt-3">
-                    <a href="{{ route('register-page') }}">Login</a>
+                    <a href="{{ route('register-page') }}">Register here!</a>
                 </p>
             </div>
             <!-- /.login-card-body -->

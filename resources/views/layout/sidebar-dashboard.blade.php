@@ -10,64 +10,70 @@
         <!-- Sidebar Menu -->
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                {{-- Admin Features --}}
+                @if (auth()->user()->role === 'Admin')
+                    <li class="nav-header">ADMIN FEATURES</li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-user-friends nav-icon"></i>
+                            <p>Participants list</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-check-circle nav-icon"></i>
+                            <p>Verification Page</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-plus-circle nav-icon"></i>
+                            <p>Attendance & Agenda</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-bullhorn nav-icon"></i>
+                            <p>Announcement</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-address-book nav-icon"></i>
+                            <p>Submission</p>
+                        </a>
+                    </li>
+                @endif
+                <li class="nav-header">MAIN DASHBOARD</li>
                 <li class="nav-item">
-                    <a href="" class="nav-link">
+                    <a href="/" class="nav-link">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
-                            Dashboard
-                        </p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-copy"></i>
-                        <p>
-                            Document
-                            <i class="fas fa-angle-left right"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Abstrak</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Paper</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>PPT</p>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a href="" class="nav-link">
-                        <i class="nav-icon fas fa-pen-alt"></i>
-                        <p>
-                            Authors Data
+                            Main menu
                         </p>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="" class="nav-link">
-                        <i class="nav-icon fas fa-money-bill-alt"></i>
+                        <i class="nav-icon fas fa-calendar-week"></i>
                         <p>
-                            Payment
+                            All agenda
                         </p>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="" class="nav-link">
-                        <i class="nav-icon fas fa-handshake"></i>
+                        <i class="nav-icon fas fa-chalkboard-teacher"></i>
                         <p>
-                            Sponsorship
+                            Learning Module
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="" class="nav-link">
+                        <i class="nav-icon fas fa-question-circle"></i>
+                        <p>
+                            FAQ
                         </p>
                     </a>
                 </li>
@@ -78,9 +84,7 @@
                         <p>Profile</p>
                     </a>
                 </li>
-                <li class="nav-item">
-                    
-                </li>
+
             </ul>
         </nav>
         <!-- /.sidebar-menu -->

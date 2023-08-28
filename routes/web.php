@@ -10,7 +10,9 @@ Route::middleware(['auth', 'userstatus'])->group(function () {
         'dashboard.index'
     );
 });
+
 Route::get('/unverified', [DashboardController::class, 'unverified'])->name('unverified');
+
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'authenticate'])->name('authenticate');
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
