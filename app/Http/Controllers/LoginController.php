@@ -9,7 +9,7 @@ class LoginController extends Controller
 {
     public function index()
     {
-        $title = "ESC Login Page";
+        $title = "EPTA Login Page";
         return view('auth.login', compact('title'));
     }
 

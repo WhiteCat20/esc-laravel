@@ -24,13 +24,13 @@
                         <input type="password" class="form-control" id="password" name="password">
                     </div>
                     <div class="row">
-                        <div class="col-6">
+                        <div class="col-md-6">
                             <div class="mb-3">
                                 <label for="nama" class="form-label">NRP</label>
                                 <input type="text" class="form-control" id="nama" name="nrp">
                             </div>
                         </div>
-                        <div class="col-6">
+                        <div class="col-md-6">
                             <div class="mb-3">
                                 <label for="nama" class="form-label">No Telp</label>
                                 <input type="text" class="form-control" id="nama" name="no_telp">
@@ -41,17 +41,18 @@
                         <div style="padding: 30px">
                             <span>Pembayaran</span>
                             <ul>
-                                <li>Pembayaran ESC sebesar Rp30.000</li>
-                                <li>Pembayaran dapat melalui OVO, GoPay, Mandiri</li>
+                                <li>Pembayaran EPTA sebesar Rp30.000</li>
+                                <li>BRI : 124801006744508 a/n SAFIRA FARSYA PUTRI</li>
+                                <li>Gopay : 08113006222 (Safira Farsya Putri)</li>
                             </ul>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="bukti_pembayaran">Bukti Pembayaran</label>
                         <div class="input-group">
+                            <div id="selectedFileName" class="selected-file-name d-block"></div>
                             <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="bukti_pembayaran"
-                                    name="bukti_pembayaran">
+                                <input type="file" class="" id="bukti_pembayaran" name="bukti_pembayaran">
                                 <label class="custom-file-label" for="bukti_pembayaran">Choose file</label>
                             </div>
                             <div class="input-group-append">
@@ -68,4 +69,21 @@
             </div>
         </div>
     </div>
+    <script>
+        const fileInput = document.getElementById('bukti_pembayaran');
+        const customFileLabel = document.querySelector('.custom-file-label');
+        const selectedFileName = document.getElementById('selectedFileName');
+
+        fileInput.addEventListener('change', (event) => {
+            const file = event.target.files[0];
+
+            if (file) {
+                customFileLabel.textContent = file.name;
+                // selectedFileName.textContent = `Selected file: ${file.name}`;
+            } else {
+                customFileLabel.textContent = 'Choose file';
+                // selectedFileName.textContent = '';
+            }
+        });
+    </script>
 @endsection

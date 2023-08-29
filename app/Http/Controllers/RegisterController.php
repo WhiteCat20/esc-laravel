@@ -11,7 +11,7 @@ class RegisterController extends Controller
 {
     public function index()
     {
-        $title = "ESC Register Page";
+        $title = "EPTA Register Page";
         return view('auth.register', compact('title'));
     }
 
