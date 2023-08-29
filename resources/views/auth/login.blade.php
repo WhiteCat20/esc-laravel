@@ -2,12 +2,12 @@
 @section('content')
     <div class="login-box">
         <div class="login-logo">
-            <a href="#"><b>ECS Study Club</b></a>
+            <a href="#"><b>EPTA LMS</b></a>
         </div>
         <!-- /.login-logo -->
         <div class="card">
             <div class="card-body login-card-body">
-                <p class="login-box-msg">Login</p>
+                <p class="login-box-msg">Please fill to login</p>
                 <form action="{{ route('authenticate') }}" method="POST">
                     @csrf
                     <div class="input-group mb-3">

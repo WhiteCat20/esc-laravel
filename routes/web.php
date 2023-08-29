@@ -12,12 +12,13 @@ Route::middleware(['auth', 'userstatus'])->group(function () {
 });
 
 Route::get('/unverified', [DashboardController::class, 'unverified'])->name('unverified');
-
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'authenticate'])->name('authenticate');
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('/register', [RegisterController::class, 'index'])->name('register-page');
 Route::post('register', [RegisterController::class, 'store'])->name('register-create');
+
+
 
 // Route::prefix('admin')->group(function () {
 //     Route::get('/', [DashboardController::class, 'index'])->name(

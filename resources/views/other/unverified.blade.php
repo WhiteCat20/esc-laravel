@@ -1,14 +1,14 @@
 @extends('layout.other-layout')
 @section('content')
     @if (auth()->user()->status !== 'verified')
-        <div class="lockscreen-wrapper">
+        <div class="lockscreen-wrapper" style="max-width: 100%">
             <div class="lockscreen-logo">
-                <img src="{{ asset('img/SpanishWhirlwindGaur-max-1mb.gif') }}" width="300" alt="warning unverified">
+                <img src="{{ asset('img/success.gif') }}" width="350" alt="warning unverified">
             </div>
             <div class="alert-unverified-text text-center mb-3">
-                <h1 style="font-size: 3rem">Your account is still not verified :(</h1>
-                <h2>Please wait for a moment</h2>
-                <a href="#">is there something wrong? feel free to contact us!</a>
+                <span style="font-size: 3rem">Thank you for participating in EPTA 2023</span>
+                <h2>Please wait for your account to be verified, we'll inform you soon</h2>
+                <a href="/wa.me/6285756429806">feel free to contact us!</a>
             </div>
             <div class="d-flex justify-content-center">
                 <a href="/" class="btn btn-success">Refresh</a>
