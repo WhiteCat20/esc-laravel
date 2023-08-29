@@ -1,6 +1,6 @@
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/n1608863/public_html/esc-laravel
+    - export DEPLOYPATH=/home/n1608863/public_html/epta.e-205.org
     - /bin/cp -r * $DEPLOYPATH #copy all from root
 #    - /bin/cp -r ./public/* $DEPLOYPATH/public_html/
     - /bin/cp ./public/js/*.js $DEPLOYPATH/public_html/js
