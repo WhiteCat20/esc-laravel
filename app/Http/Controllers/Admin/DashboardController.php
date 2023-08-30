@@ -12,9 +12,13 @@ class DashboardController extends Controller
         $title = 'EPTA Dashboard';
         return view('dashboard.index', compact('title'));
     }
+
     public function unverified()
     {
         $title = 'Oops, Unverified';
         return view('other.unverified', compact('title'));
     }
+
+
+    
 }

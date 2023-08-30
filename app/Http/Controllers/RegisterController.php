@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
-use App\Models\UserPreferences;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -41,12 +40,12 @@ class RegisterController extends Controller
         ]);
 
         $bukti_pembayaran = $request->file('bukti_pembayaran');
-        $nama_bukti_pembayaran = $bukti_pembayaran->getClientOriginalName() . ' ' . 'bukti pembayaran' . $registrationData['nama'] . '.' . $bukti_pembayaran->getClientOriginalExtension();
+        $nama_bukti_pembayaran = $bukti_pembayaran->getClientOriginalName();
         $tujuan_bukti_pembayaran = 'storage/' . $registrationData["nama"];
         $bukti_pembayaran->move($tujuan_bukti_pembayaran, $nama_bukti_pembayaran);
 
         $user->userpreferences()->create([
-            'bukti_pembayaran' => $tujuan_bukti_pembayaran,
+            'bukti_pembayaran' => $tujuan_bukti_pembayaran . '/' . $nama_bukti_pembayaran,
         ]);
 
         return redirect('/login')->with('message', 'Added Successfully');

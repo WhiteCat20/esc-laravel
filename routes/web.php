@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\ParticipantController;
+use App\Http\Controllers\Admin\VerificationController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
@@ -10,6 +12,15 @@ Route::middleware(['auth', 'userstatus'])->group(function () {
         'dashboard.index'
     );
 });
+
+Route::middleware(['auth', 'role:Admin'])->group(function () {
+    Route::prefix('admin')->group(function () {
+        Route::get('participants', [ParticipantController::class, 'viewParticipants'])->name('participants');
+        Route::get('verification', [VerificationController::class, 'verificationPage'])->name('verification');
+        Route::post('users/{user}/toggle-status', [VerificationController::class, 'toggleStatus'])->name('toggle-status');
+    });
+});
+
 
 Route::get('/unverified', [DashboardController::class, 'unverified'])->name('unverified');
 Route::get('/login', [LoginController::class, 'index'])->name('login');

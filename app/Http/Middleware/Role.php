@@ -22,6 +22,6 @@ class Role
                 return $next($request);
             }
         }
-        return redirect()->to(route('login-page'));
+        return redirect()->to(route('dashboard.index'));
     }
 }

@@ -14,13 +14,13 @@
                 @if (auth()->user()->role === 'Admin')
                     <li class="nav-header">ADMIN FEATURES</li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="{{ route('participants') }}" class="nav-link">
                             <i class="fas fa-user-friends nav-icon"></i>
                             <p>Participants list</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="{{ route('verification') }}" class="nav-link">
                             <i class="fas fa-check-circle nav-icon"></i>
                             <p>Verification Page</p>
                         </a>
