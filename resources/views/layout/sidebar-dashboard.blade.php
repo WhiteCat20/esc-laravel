@@ -26,7 +26,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="{{ route('agenda-admin') }}" class="nav-link">
                             <i class="fas fa-plus-circle nav-icon"></i>
                             <p>Attendance & Agenda</p>
                         </a>

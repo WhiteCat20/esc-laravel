@@ -1,9 +1,9 @@
 @extends('layout.dashboard')
 @section('content')
     <div class="container-fluid">
-        <div class="row mx-1">
+        <div class="row mx-1 flex-md-reverse">
             {{-- Pengumuman dan Agenda --}}
-            <div class="col-9">
+            <div class="col-md-9">
                 <div class="card card-default">
                     <div class="card-header">
                         <h3 class="card-title">
@@ -66,7 +66,7 @@
                 </div>
             </div>
             {{-- Tugas dan Pengumpulan --}}
-            <div class="col-3">
+            <div class="col-md-3">
                 <div class="card" style="position: sticky; top: 20px;">
                     <div class="card-header">
                         <h5 class="m-0">Assignment and Submission</h5>
@@ -81,8 +81,6 @@
                     </div>
                 </div>
             </div>
-            {{-- Briefly agenda --}}
-
         </div>
     </div>
 @endsection

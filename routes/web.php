@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ParticipantController;
 use App\Http\Controllers\Admin\VerificationController;
+use App\Http\Controllers\AgendaController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
@@ -18,6 +19,7 @@ Route::middleware(['auth', 'role:Admin'])->group(function () {
         Route::get('participants', [ParticipantController::class, 'viewParticipants'])->name('participants');
         Route::get('verification', [VerificationController::class, 'verificationPage'])->name('verification');
         Route::post('users/{user}/toggle-status', [VerificationController::class, 'toggleStatus'])->name('toggle-status');
+        Route::get('agenda', [AgendaController::class, 'index_admin'])->name('agenda-admin');
     });
 });
 
