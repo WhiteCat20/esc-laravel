@@ -13,54 +13,22 @@
                     </div>
 
                     <div class="card-body">
-                        <div class="callout callout-info">
-                            <h5 class="text-bold">I am a danger callout!</h5>
-                            <p>There is a problem that we need to fix. A wonderful serenity has taken possession of my
-                                entire
-                                soul,
-                                like these sweet mornings of spring which I enjoy with my whole heart.</p>
-                            <a href="#" class="text-white text-decoration-none btn btn-sm btn-primary">Details</a>
-                        </div>
-                        <div class="callout callout-info">
-                            <h5 class="text-bold">I am a danger callout!</h5>
-                            <p>There is a problem that we need to fix. A wonderful serenity has taken possession of my
-                                entire
-                                soul,
-                                like these sweet mornings of spring which I enjoy with my whole heart.</p>
-                            <a href="#" class="text-white text-decoration-none btn btn-sm btn-primary">Details</a>
-                        </div>
-                        <div class="callout callout-info">
-                            <h5 class="text-bold">I am a danger callout!</h5>
-                            <p>There is a problem that we need to fix. A wonderful serenity has taken possession of my
-                                entire
-                                soul,
-                                like these sweet mornings of spring which I enjoy with my whole heart.</p>
-                            <a href="#" class="text-white text-decoration-none btn btn-sm btn-primary">Details</a>
-                        </div>
-                        <div class="callout callout-info">
-                            <h5 class="text-bold">I am a danger callout!</h5>
-                            <p>There is a problem that we need to fix. A wonderful serenity has taken possession of my
-                                entire
-                                soul,
-                                like these sweet mornings of spring which I enjoy with my whole heart.</p>
-                            <a href="#" class="text-white text-decoration-none btn btn-sm btn-primary">Details</a>
-                        </div>
-                        <div class="callout callout-info">
-                            <h5 class="text-bold">I am a danger callout!</h5>
-                            <p>There is a problem that we need to fix. A wonderful serenity has taken possession of my
-                                entire
-                                soul,
-                                like these sweet mornings of spring which I enjoy with my whole heart.</p>
-                            <a href="#" class="text-white text-decoration-none btn btn-sm btn-primary">Details</a>
-                        </div>
-                        <div class="callout callout-info">
-                            <h5 class="text-bold">I am a danger callout!</h5>
-                            <p>There is a problem that we need to fix. A wonderful serenity has taken possession of my
-                                entire
-                                soul,
-                                like these sweet mornings of spring which I enjoy with my whole heart.</p>
-                            <a href="#" class="text-white text-decoration-none btn btn-sm btn-primary">Details</a>
-                        </div>
+                        @if ($announcement->isEmpty())
+                            <h5 class="text-center">There are no announcement</h5>
+                        @else
+                            @foreach ($announcement as $a)
+                                <div class="callout callout-info">
+                                    <div class="d-flex justify-content-between">
+                                        <h5 class="text-bold d-inline">{{ $a->subject }}</h5> <span class="d-inline">
+                                            Author :
+                                            {{ $a->nama_asisten }}</span>
+                                    </div>
+                                    <p>{!! $a->deskripsi !!}</p>
+                                    <a href="#"
+                                        class="text-white text-decoration-none btn disabled btn-sm btn-primary">Details</a>
+                                </div>
+                            @endforeach
+                        @endif
                     </div>
 
                 </div>

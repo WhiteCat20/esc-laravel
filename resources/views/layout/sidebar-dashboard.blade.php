@@ -14,6 +14,12 @@
                 @if (auth()->user()->role === 'Admin')
                     <li class="nav-header">ADMIN FEATURES</li>
                     <li class="nav-item">
+                        <a href="{{ route('admin.index') }}" class="nav-link">
+                            <i class="fas fa-user-friends nav-icon"></i>
+                            <p>Main Admin Dashboard</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a href="{{ route('participants') }}" class="nav-link">
                             <i class="fas fa-user-friends nav-icon"></i>
                             <p>Participants list</p>
@@ -32,7 +38,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="{{ route('announcement-admin') }}" class="nav-link">
                             <i class="fas fa-bullhorn nav-icon"></i>
                             <p>Announcement</p>
                         </a>
@@ -54,11 +60,9 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="" class="nav-link">
+                    <a href="{{ route('agenda') }}" class="nav-link">
                         <i class="nav-icon fas fa-calendar-week"></i>
-                        <p>
-                            All agenda
-                        </p>
+                        <p>Attendance</p>
                     </a>
                 </li>
                 <li class="nav-item">

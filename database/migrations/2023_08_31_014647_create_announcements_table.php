@@ -19,7 +19,7 @@ return new class extends Migration
             $table->foreignId('agenda_id')->constrained('agendas')->onDelete('cascade');
             $table->string('nama_asisten');
             $table->string('subject');
-            $table->string('deskripsi');
+            $table->text('deskripsi');
         });
     }
 
