@@ -22,6 +22,7 @@
                                         <div>
                                             <h3>{{ $a->nama_agenda }}</h3>
                                             <div>{{ $a->tempat }}, {{ $a->tanggal }}</div>
+                                            <small class="text-gray">{{ $a->deskripsi }}</small>
                                         </div>
                                     </div>
                                     <button class="btn btn-lg btn-success">Attend!</button>
