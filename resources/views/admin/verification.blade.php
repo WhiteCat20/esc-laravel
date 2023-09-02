@@ -4,8 +4,8 @@
         <div class="row mx-1">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-body p-0">
-                        <table class="table">
+                    <div class="card-body table-responsive p-0">
+                        <table class="table table-hover text-nowrap">
                             <thead>
                                 <tr>
                                     <th>Name</th>
@@ -28,7 +28,7 @@
                                         </td>
                                         <td>
                                             <a href="{{ asset($p->userpreferences->bukti_pembayaran) }}">
-                                                <img src="{{ asset($p->userpreferences->bukti_pembayaran) }}" width="300"
+                                                <img src="{{ asset($p->userpreferences->bukti_pembayaran) }}" width="200"
                                                     alt="oke">
                                             </a>
                                         <td>
