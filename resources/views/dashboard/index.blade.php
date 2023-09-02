@@ -40,11 +40,11 @@
                         <h5 class="m-0">Assignment and Submission</h5>
                     </div>
                     <div class="card-body">
-                        <ul class="mb-3" style="padding: 10px">
+                        {{-- <ul class="mb-3" style="padding: 10px">
                             <li><span class="d-block">Submission Rangkuman Briefing</span>
                                 <span class="text-bold">Deadline : 30 Agustus 2023</span>
                             </li>
-                        </ul>
+                        </ul> --}}
                         <a href="#" class="btn btn-sm btn-primary">Go to submission page</a>
                     </div>
                 </div>
