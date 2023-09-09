@@ -25,7 +25,10 @@
                                             <small class="text-gray">{{ $a->deskripsi }}</small>
                                         </div>
                                     </div>
-                                    <button class="btn btn-lg btn-success">Attend!</button>
+                                    <button type="button" class="btn btn-lg btn-success" data-toggle="modal"
+                                        data-target="#attend">
+                                        Attend!
+                                    </button>
                                 </div>
                             @endforeach
                         @endif
@@ -33,6 +36,46 @@
 
                 </div>
             </div>
+        </div>
+    </div>
+    {{-- modal --}}
+    <div class="modal fade" id="attend" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">New Agenda</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <form action="{{ route('create-agenda') }}" method="POST">
+                    @csrf
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="inputName">Nama Agenda</label>
+                            <input type="text" id="inputName" name="nama_agenda" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="tanggal">Tanggal</label>
+                            <input type="text" id="tanggal" name="tanggal" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="tempat">Tempat</label>
+                            <input type="text" id="tempat" name="tempat" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="deskripsi">Deskripsi</label>
+                            <textarea id="deskripsi" name="deskripsi" class="form-control" rows="4"></textarea>
+                        </div>
+                    </div>
+                    <div class="modal-footer justify-content-between">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Save changes</button>
+                    </div>
+                </form>
+            </div>
+
         </div>
     </div>
 @endsection

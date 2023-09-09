@@ -39,5 +39,8 @@ Route::get('/unverified', [DashboardController::class, 'unverified'])->name('unv
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'authenticate'])->name('authenticate');
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
-Route::get('/register', [RegisterController::class, 'index'])->name('register-page');
+// Route::get('/register', [RegisterController::class, 'index'])->name('register-page');
+Route::get('/register', function () {
+    return redirect('/login');
+})->name('register-page');
 Route::post('register', [RegisterController::class, 'store'])->name('register-create');

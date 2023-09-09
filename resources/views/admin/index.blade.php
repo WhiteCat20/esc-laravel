@@ -2,7 +2,7 @@
 @section('content')
     <div class="container-fluid">
         <div class="row">
-            <div class="col-6 col-lg-4">
+            <div class="col-md-4">
                 <div class="small-box bg-primary">
                     <div class="inner p-3">
                         <h3>{{ $participant_count }}</h3>
@@ -15,7 +15,7 @@
                             class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>
-            <div class="col-6 col-lg-4">
+            <div class="col-md-4">
                 <div class="small-box bg-success">
                     <div class="inner p-3 ">
                         @php
@@ -32,7 +32,7 @@
                         <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>
-            <div class="col-6 col-lg-4">
+            <div class="col-md-4">
                 <div class="small-box bg-info">
                     <div class="inner p-3">
                         <h3>0</h3>
