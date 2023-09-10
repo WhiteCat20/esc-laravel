@@ -11,8 +11,9 @@ class AgendaController extends Controller
     public function index()
     {
         $title = "All EPTA Agendas";
+        $user = auth()->user();
         $agendas = Agenda::latest()->get();
-        return view('dashboard.agenda', compact('title', 'agendas'));
+        return view('dashboard.agenda', compact('title', 'agendas', 'user'));
     }
 
     public function index_admin()

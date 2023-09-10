@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\VerificationController;
 use App\Http\Controllers\AgendaController;
 use App\Http\Controllers\AnnouncementController;
 use App\Http\Controllers\AssignmentController;
+use App\Http\Controllers\AttendanceController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
@@ -29,6 +30,8 @@ Route::middleware(['auth', 'role:Admin'])->group(function () {
         Route::post('/create-announcement', [AnnouncementController::class, 'store'])->name('store-announcement');
         Route::delete('/announcement/{id}/delete', [AnnouncementController::class, 'delete_announcement'])->name('delete-announcement');
         Route::get('/assignment', [AssignmentController::class, 'index_admin'])->name('assignment-admin');
+        Route::get('/attendance/{id}', [AttendanceController::class, 'attendance_show'])->name('attendance-agenda');
+        Route::post('/submit-attendance/{agendaId}', [AttendanceController::class, 'submit_attendance'])->name('submit-attendance');
     });
 });
 

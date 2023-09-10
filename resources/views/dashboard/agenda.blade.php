@@ -25,10 +25,8 @@
                                             <small class="text-gray">{{ $a->deskripsi }}</small>
                                         </div>
                                     </div>
-                                    <button type="button" class="btn btn-lg btn-success" data-toggle="modal"
-                                        data-target="#attend">
-                                        Attend!
-                                    </button>
+                                    <a href="{{ route('attendance-agenda', ['id' => $a->id]) }}"
+                                        class="btn btn-sm btn-success align-items-center d-flex text-decoration-none text-white text-lg">Attend!</a>
                                 </div>
                             @endforeach
                         @endif
@@ -38,44 +36,53 @@
             </div>
         </div>
     </div>
-    {{-- modal --}}
-    <div class="modal fade" id="attend" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog">
+    @if (session('success'))
+        <script>
+            $(document).ready(function() {
+                $('#successModal').modal('show');
+            });
+        </script>
+    @endif
+    <!-- Rest of your form and modal code -->
+    <!-- Success Modal HTML -->
+    <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel">
+        <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title">New Agenda</h4>
+                    <h5 class="modal-title" id="successModalLabel" style="color: #28a745">Success</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
+                        <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form action="{{ route('create-agenda') }}" method="POST">
-                    @csrf
-                    <div class="modal-body">
-                        <div class="form-group">
-                            <label for="inputName">Nama Agenda</label>
-                            <input type="text" id="inputName" name="nama_agenda" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <label for="tanggal">Tanggal</label>
-                            <input type="text" id="tanggal" name="tanggal" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <label for="tempat">Tempat</label>
-                            <input type="text" id="tempat" name="tempat" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <label for="deskripsi">Deskripsi</label>
-                            <textarea id="deskripsi" name="deskripsi" class="form-control" rows="4"></textarea>
-                        </div>
-                    </div>
-                    <div class="modal-footer justify-content-between">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Save changes</button>
-                    </div>
-                </form>
+                <div class="modal-body" style="color: #28a745">
+                    Thanks {{ $user->nama }}, attendance submitted successfully.
+                </div>
             </div>
-
         </div>
     </div>
+    @if (session('error'))
+        <script>
+            $(document).ready(function() {
+                $('#errorModal').modal('show');
+            });
+        </script>
+    @endif
+    <!-- Rest of your form and modal code -->
+    <!-- Success Modal HTML -->
+    <div class="modal fade" id="errorModal" tabindex="-1" role="dialog" aria-labelledby="errorModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="errorModal" style="color: #dc3545">Failed!!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" style="color: #dc3545">
+                    Sorry {{ $user->nama }}, attendance failed or wrong code!
+                </div>
+            </div>
+        </div>
+    </div>
+
 @endsection
