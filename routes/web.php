@@ -45,6 +45,8 @@ Route::middleware(['auth', 'role:Admin'])->group(function () {
 Route::get('/editor', function () {
     return view('other.editor');
 })->name('editor-page');
+Route::get('/forgot-password', [LoginController::class, 'forgot_password_page'])->name('forgot-password-page');
+Route::post('/reset-password', [LoginController::class, 'resetPassword'])->name('reset-password');
 Route::get('/unverified', [DashboardController::class, 'unverified'])->name('unverified');
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'authenticate'])->name('authenticate');
