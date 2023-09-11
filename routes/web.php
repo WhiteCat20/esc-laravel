@@ -8,12 +8,14 @@ use App\Http\Controllers\AnnouncementController;
 use App\Http\Controllers\AssignmentController;
 use App\Http\Controllers\AttendanceController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\ModulBelajarController;
 use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware(['auth', 'userstatus'])->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard.index');
     Route::get('agenda', [AgendaController::class, 'index'])->name('agenda');
+    Route::get('/learning-module', [ModulBelajarController::class, 'index'])->name('learning-module');
 });
 
 Route::middleware(['auth', 'role:Admin'])->group(function () {
@@ -32,6 +34,9 @@ Route::middleware(['auth', 'role:Admin'])->group(function () {
         Route::get('/assignment', [AssignmentController::class, 'index_admin'])->name('assignment-admin');
         Route::get('/attendance/{id}', [AttendanceController::class, 'attendance_show'])->name('attendance-agenda');
         Route::post('/submit-attendance/{agendaId}', [AttendanceController::class, 'submit_attendance'])->name('submit-attendance');
+        Route::get('/uploaded-files', [ModulBelajarController::class, 'index_admin'])->name('modul-admin');
+        Route::get('/create-uploaded-files', [ModulBelajarController::class, 'create'])->name('create-modul');
+        Route::post('/upload-file', [ModulBelajarController::class, 'store'])->name('upload-modul');
     });
 });
 

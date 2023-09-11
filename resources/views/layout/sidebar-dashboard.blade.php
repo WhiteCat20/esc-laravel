@@ -44,6 +44,12 @@
                         </a>
                     </li>
                     <li class="nav-item">
+                        <a href="{{ route('modul-admin') }}" class="nav-link">
+                            <i class="fas fa-upload nav-icon"></i>
+                            <p>Uploaded Files</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a href="#" class="nav-link">
                             <i class="fas fa-address-book nav-icon"></i>
                             <p>Submission</p>
@@ -66,7 +72,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="" class="nav-link">
+                    <a href="{{ route('learning-module') }}" class="nav-link">
                         <i class="nav-icon fas fa-chalkboard-teacher"></i>
                         <p>
                             Learning Module
