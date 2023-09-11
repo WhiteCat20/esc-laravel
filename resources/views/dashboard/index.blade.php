@@ -18,8 +18,8 @@
                         @else
                             @foreach ($announcement as $a)
                                 <div class="callout callout-info">
-                                    <div class="d-flex justify-content-between">
-                                        <h5 class="text-bold d-inline">{{ $a->subject }}</h5> <span class="d-inline">
+                                    <div class="d-flex justify-content-between flex-wrap">
+                                        <h5 class="text-bold">{{ $a->subject }}</h5> <span class="d-inline">
                                             Author :
                                             {{ $a->nama_asisten }}</span>
                                     </div>
