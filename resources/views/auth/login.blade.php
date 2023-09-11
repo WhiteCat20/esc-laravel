@@ -31,7 +31,7 @@
                     </div>
                 </form>
                 <p class="text-center mt-3">
-                    <a href="{{ route('register-page') }}">Register here!</a> | <a href="{{ route('forgot-password-page') }}">Forgot Password</a>
+                    <a href="{{ route('register-page') }}">Register here!</a>
                 </p>
             </div>
             <!-- /.login-card-body -->
