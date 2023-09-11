@@ -34,8 +34,8 @@ Route::middleware(['auth', 'role:Admin'])->group(function () {
         Route::post('/create-announcement', [AnnouncementController::class, 'store'])->name('store-announcement');
         Route::delete('/announcement/{id}/delete', [AnnouncementController::class, 'delete_announcement'])->name('delete-announcement');
         Route::get('/assignment', [AssignmentController::class, 'index_admin'])->name('assignment-admin');
-        Route::get('/attendance/{id}', [AttendanceController::class, 'attendance_show'])->name('attendance-agenda');
-        Route::post('/submit-attendance/{agendaId}', [AttendanceController::class, 'submit_attendance'])->name('submit-attendance');
+        // Route::get('/attendance/{id}', [AttendanceController::class, 'attendance_show'])->name('attendance-agenda');
+        // Route::post('/submit-attendance/{agendaId}', [AttendanceController::class, 'submit_attendance'])->name('submit-attendance');
         Route::get('/uploaded-files', [ModulBelajarController::class, 'index_admin'])->name('modul-admin');
         Route::get('/create-uploaded-files', [ModulBelajarController::class, 'create'])->name('create-modul');
         Route::post('/upload-file', [ModulBelajarController::class, 'store'])->name('upload-modul');
