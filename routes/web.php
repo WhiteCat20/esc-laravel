@@ -16,6 +16,8 @@ Route::middleware(['auth', 'userstatus'])->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard.index');
     Route::get('agenda', [AgendaController::class, 'index'])->name('agenda');
     Route::get('/learning-module', [ModulBelajarController::class, 'index'])->name('learning-module');
+    Route::get('/attendance/{id}', [AttendanceController::class, 'attendance_show'])->name('attendance-agenda');
+    Route::post('/submit-attendance/{agendaId}', [AttendanceController::class, 'submit_attendance'])->name('submit-attendance');
 });
 
 Route::middleware(['auth', 'role:Admin'])->group(function () {
